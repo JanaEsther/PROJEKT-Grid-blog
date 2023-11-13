@@ -1,38 +1,45 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
-
-
-body {
-	margin: 0;
-	padding: 30px;
-	font-family:  'Alice', serif;
-	font-size: 18px;
-	line-height: 1.5;
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
 }
 
-h1, h2, h3 {
-	font-family: 'Kaushan Script', cursive;
-	font-weight: normal;
-	margin: 0;
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: "Alice", serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Kaushan Script", cursive;
+  font-weight: normal;
+  margin: 0;
 }
 
 blockquote {
-	font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 /* --------------------------------------------------- */
 
 /* barvy */
 :root {
-	--svetla: #edf3f5;
-	--seda: #b2bec3;
-	--tmava: #636e72;
-	--oranzova: #ee5a24;
-	--cervena: #ea2027;
-	--zluta: #f79f1f;
-	--zelena: #a3cb38;
-	--limetka: #c4e538;
+  --svetla: #edf3f5;
+  --seda: #b2bec3;
+  --tmava: #636e72;
+  --oranzova: #ee5a24;
+  --cervena: #ea2027;
+  --zluta: #f79f1f;
+  --zelena: #a3cb38;
+  --limetka: #c4e538;
 }
 
 /*
@@ -64,5 +71,75 @@ blockquote {
 	- https://www.w3schools.com/css/css3_variables.asp
 	- https://css-tricks.com/patterns-for-practical-css-custom-properties-use/
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
+
+	čárka - 
+	.hlavni::after{
+    content: "";
+    display: block;
+    width: 200px;
+    height: 3px;
+    background-image: linear-gradient(to right, magenta, pink);
+    margin-top: 10px;
+    margin-left: -50px;
+
 */
 
+.blog {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr 4fr 2fr;
+  gap: 40px;
+}
+
+header {
+  grid-column: 2/3;
+}
+
+h1 {
+  color: var(--zelena);
+  font-size: 65px;
+  width: 70%;
+}
+
+h2 {
+  grid-column: 2/3;
+  color: #c4e538;
+  font-size: 50px;
+}
+
+.meta {
+  color: #edf3f5;
+}
+
+p {
+  grid-column: 2/3;
+}
+
+figure {
+  grid-column: 1/4;
+}
+
+figcaption {
+  color: #edf3f5;
+}
+
+.tip p {
+  background-color: #edf3f5;
+  color: #b2bec3;
+}
+
+.tip a {
+  color: #ea2027;
+}
+
+blockquote {
+  grid-column: 1/4;
+  color: #b2bec3;
+  align-self: center;
+  font-size: 40px;
+}
+
+footer {
+  grid-column: 4/-4;
+  color: #edf3f5;
+}
