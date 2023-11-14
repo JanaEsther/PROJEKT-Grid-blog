@@ -24,7 +24,7 @@ h3 {
   margin: 0;
 }
 
-blockquote {
+.blockquote {
   font-family: "Kaushan Script", cursive;
 }
 
@@ -91,14 +91,14 @@ blockquote {
   gap: 40px;
 }
 
-header {
+.header {
   grid-column: 2/3;
 }
 
 h1 {
   color: var(--zelena);
   font-size: 65px;
-  width: 70%;
+  width: 60%;
 }
 
 h2 {
@@ -111,19 +111,22 @@ h2 {
   color: #edf3f5;
 }
 
-p {
+.text {
   grid-column: 2/3;
 }
 
-figure {
+.figure {
   grid-column: 1/4;
+  padding:0;
+  margin:0;
+
 }
 
-figcaption {
+.figcaption {
   color: #edf3f5;
 }
 
-.tip p {
+.tip text {
   background-color: #edf3f5;
   color: #b2bec3;
 }
@@ -132,14 +135,52 @@ figcaption {
   color: #ea2027;
 }
 
-blockquote {
-  grid-column: 1/4;
+.tip {
+  grid-column: 1/2;
+  width: 160px;
+  font-size: 16px;
+  color: #636e72;
+  background-color: #edf3f5;
+  padding: 20px;
+
+}
+
+.tip-vlevo{
+  text-align: right;
+  border-right: solid 2px #ee5a24;
+}
+
+.tip-vpravo{
+  grid-column: 3/4;
+  width:290px;
+  border-left: solid 2px #ee5a24;
+}
+
+.palacinky{
+  width:120px;
+}
+
+.blockquote {
+  grid-column: span 3;
   color: #b2bec3;
   align-self: center;
   font-size: 40px;
+  padding:0;
+  margin:0;
 }
 
-footer {
+.blockquote::before,
+::after{
+  content:" ";
+  width: 30px;
+  height:2px;
+  color:#c4e538;
+  padding: 10px 0;
+
+  
+}
+
+.footer {
   grid-column: 4/-4;
   color: #edf3f5;
 }
