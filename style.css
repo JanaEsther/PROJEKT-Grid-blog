@@ -86,8 +86,8 @@ h3 {
 
 .blog {
   display: grid;
-  align-content: center;
   grid-template-columns: 1fr 4fr 2fr;
+  width: 100%;
   gap: 40px;
 }
 
@@ -98,7 +98,7 @@ h3 {
 h1 {
   color: var(--zelena);
   font-size: 65px;
-  width: 60%;
+  width: 50%;
 }
 
 h2 {
@@ -117,13 +117,16 @@ h2 {
 
 .figure {
   grid-column: 1/4;
-  padding:0;
-  margin:0;
-
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .figcaption {
   color: #edf3f5;
+  grid-column: 1/3;
+  margin: 0;
+  padding: 0;
 }
 
 .tip text {
@@ -142,45 +145,62 @@ h2 {
   color: #636e72;
   background-color: #edf3f5;
   padding: 20px;
-
+  margin-bottom: 20px;
 }
 
-.tip-vlevo{
+.tip-vlevo {
   text-align: right;
   border-right: solid 2px #ee5a24;
 }
 
-.tip-vpravo{
+.tip-vpravo {
   grid-column: 3/4;
-  width:290px;
+  width: 350px;
   border-left: solid 2px #ee5a24;
+  margin-right: 0;
+  margin-left: 150px;
+  padding: 30px;
 }
 
-.palacinky{
-  width:120px;
+.palacinky {
+  width: 120px;
 }
 
 .blockquote {
-  grid-column: span 3;
+  grid-column: 2/4;
   color: #b2bec3;
-  align-self: center;
   font-size: 40px;
-  padding:0;
-  margin:0;
+  padding-left: 60px;
+  margin: 0;
+  align-self: center;
 }
 
 .blockquote::before,
-::after{
-  content:" ";
-  width: 30px;
-  height:2px;
-  color:#c4e538;
-  padding: 10px 0;
-
-  
+.blockquote::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: #c4e538;
+  margin: 30px 255px;
 }
 
-.footer {
+.dlouha::before,
+.dlouha::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: #c4e538;
+  margin: 30px 400px;
+}
+
+.dlouha {
+  grid-column: 1/4;
+}
+
+.footer,
+.footer a {
   grid-column: 4/-4;
   color: #edf3f5;
 }
